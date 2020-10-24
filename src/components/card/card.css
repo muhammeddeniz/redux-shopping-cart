@@ -1,0 +1,26 @@
+.card {
+   background: #ccc;
+   margin: 20px 10px;
+
+   border-radius: 12px;
+   padding: 10px;
+}
+
+.card:hover {
+    background: gray;
+    cursor: pointer;
+    
+ }
+
+.card .card__name {
+    font-family: fantasy;
+    font-size: 22px;
+
+    font-weight: 500;
+    color: #111;
+}
+
+.card .card__price {
+    font-size: large;
+    font-weight: 400;
+}
