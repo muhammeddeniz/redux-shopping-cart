@@ -1,12 +1,35 @@
 import React from "react";
 
+import { connect } from "react-redux";
+import { Card } from "../components";
 
-const Chart = () => {
-    return(
-        <div>
-            <h1>Chart Page</h1>
-        </div>
-    )
-}
+const Chart = (props) => {
+  return (
+    <div>
+      <div
+        style={{
+          marginTop: 200,
+        }}
+      >
+        {props.products?.map((product) => (
+          <Card
+            onClick={() => {
+              props.addProduct(product);
+            }}
+            name={product.name}
+            price={product.price}
+          ></Card>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export default Chart;
+const getStateProps = (state) => {
+  return {
+    data: state.data,
+    products: state.products,
+  };
+};
+
+export default connect(getStateProps)(Chart);

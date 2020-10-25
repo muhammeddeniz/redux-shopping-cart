@@ -1,32 +1,39 @@
-import React  from "react";
+import React from "react";
 import "./header.css";
 
-import {    BrowserRouter as Router, 
-Switch,
-Route,
-Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { HomePage, ChartPage } from "../../pages";
 
 const Header = () => {
-    return (
-        <Router>
-            <nav>
-                <Link to="/">Home</Link>
-                <Link to="/chart">Chart</Link>
-            </nav>
+  return (
+    <Router>
+      <header className="header">
+        <Link to="/" className="header__title">
+          Shopping Chart
+        </Link>
 
-            <Switch>
-                <Route path="/chart">
-                    <ChartPage />
-                </Route>
+        <nav>
+          <Link to="/" className="navbar__link">
+            Home
+          </Link>
 
-                <Route path="/">
-                    <HomePage />
-                </Route>
-            </Switch>
-        </Router>
-    )
-}
+          <Link to="/chart" className="navbar__link">
+            Chart
+          </Link>
+        </nav>
+      </header>
+
+      <Switch children>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+
+        <Route path="/chart">
+          <ChartPage />
+        </Route>
+      </Switch>
+    </Router>
+  );
+};
 
 export default Header;

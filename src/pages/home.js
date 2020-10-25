@@ -8,36 +8,21 @@ const App = (props) => {
   console.log("products : ", props.products);
 
   return (
-    <div className="App">
-     
-       <div
-          style={{
-            display: "flex",
-            flexDirection: "row"
-          }}
-         
-        >
-      {props.data?.data?.map((product) => (
-       
-          <Card  
-          onClick={() => {
-            props.addProduct(product);
-          }} 
-          name={product.name} 
-          price={product.price}></Card>
-          ))}
-          </div>
-
+    <div className="carts">
       <div
         style={{
-          marginTop: 200,
+          display: "flex",
+          flexDirection: "row",
         }}
       >
-        {props.products?.map((product) => (
-          <div>
-            <h1>{product.name}</h1>
-            <h4>{product.price}</h4>
-          </div>
+        {props.data?.data?.map((product) => (
+          <Card
+            onClick={() => {
+              props.addProduct(product);
+            }}
+            name={product.name}
+            price={product.price}
+          ></Card>
         ))}
       </div>
     </div>

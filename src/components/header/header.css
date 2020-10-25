@@ -1,3 +1,43 @@
-h1 {
-    color: red;
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1200px;
+    margin: auto;
+     
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid rgb(207, 206, 206);
+}
+
+.header__title{
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+
+    font-weight: 500;
+    font-family: fantasy;
+
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+
+.header .navbar__link{
+    padding: 0 15px;
+
+    font-size: 21px;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: fantasy;
+
+    color: black;
+
+}
+
+.header .navbar__link:hover{
+    color: gray;
+
 }

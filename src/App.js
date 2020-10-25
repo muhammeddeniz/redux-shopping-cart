@@ -1,17 +1,13 @@
-import React, { useEffect } from "react";
- 
-import { Card, Header } from "./components";
+import React, { useEffect } from 'react';
 
-const App = (props) => { 
+import { Card, Header } from './components';
 
+const App = (props) => {
   return (
     <div className="App">
       <Header />
-     
     </div>
   );
 };
 
- 
-
-export default  App ;
+export default App;
