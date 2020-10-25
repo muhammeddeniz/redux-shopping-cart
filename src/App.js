@@ -2,13 +2,14 @@ import React, { useEffect } from "react";
 
 import { connect } from "react-redux";
 import { addProduct, removeProduct } from "./actions";
-import { Card } from "./components";
+import { Card, Header } from "./components";
 
 const App = (props) => {
   console.log("products : ", props.products);
 
   return (
     <div className="App">
+      <Header></Header>
        <div
           style={{
             display: "flex",
