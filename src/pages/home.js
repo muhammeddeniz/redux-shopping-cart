@@ -4,17 +4,14 @@ import { connect } from "react-redux";
 import { addProduct, removeProduct } from "../actions";
 import { Card } from "../components";
 
+import "../styles/home.css";
+
 const App = (props) => {
   console.log("products : ", props.products);
 
   return (
     <div className="carts">
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-        }}
-      >
+      <div className="container">
         {props.data?.data?.map((product) => (
           <Card
             onClick={() => {

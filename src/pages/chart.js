@@ -6,11 +6,7 @@ import { Card } from "../components";
 const Chart = (props) => {
   return (
     <div>
-      <div
-        style={{
-          marginTop: 200,
-        }}
-      >
+      <div className="container">
         {props.products?.map((product) => (
           <Card
             onClick={() => {
