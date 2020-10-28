@@ -9,6 +9,7 @@ const Chart = (props) => {
       <div className="container">
         {props.products?.map((product) => (
           <Card
+            isButtonVisible={false}
             onClick={() => {
               props.addProduct(product);
             }}

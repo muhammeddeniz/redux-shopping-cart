@@ -1,15 +1,15 @@
 .card {
   background: #fff;
   border-radius: 12px;
-  padding: 60px;
+  padding: 20px 60px;
   margin: 20px 40px;
 
   box-shadow: 2px 2px 6px rgb(207, 204, 204);
+  min-height: 150px;
 }
 
 .card:hover {
   background: #fff;
-  cursor: pointer;
 
   box-shadow: 2px 3px 12px rgb(207, 204, 204);
 }
@@ -26,4 +26,10 @@
   font-size: large;
   font-weight: 400;
   color: #111;
+}
+
+.card__button {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 30px;
 }
