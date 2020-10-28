@@ -16,3 +16,24 @@
   font-size: 20px;
   margin-left: 10px;
 }
+
+.button__delete {
+  border: 0px;
+  border-radius: 12px;
+  background: #ff304f;
+  color: #fff;
+
+  font-size: 18px;
+  padding: 10px 20px;
+
+  outline: none;
+  cursor: pointer;
+}
+
+.button__delete::after {
+  content: "X";
+  font-size: 20px;
+  margin-left: 10px;
+
+  font-weight: bold;
+}

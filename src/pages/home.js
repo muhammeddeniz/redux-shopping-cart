@@ -14,6 +14,7 @@ const App = (props) => {
       <div className="container">
         {props.data?.data?.map((product) => (
           <Card
+            buttonText="Add"
             onClick={() => {
               props.addProduct(product);
               props.setNotification(true);

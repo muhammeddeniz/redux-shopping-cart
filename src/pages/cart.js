@@ -2,19 +2,21 @@ import React from "react";
 
 import { connect } from "react-redux";
 import { Card } from "../components";
+import { removeProduct } from "../actions";
 
-const Chart = (props) => {
+const Cart = (props) => {
   return (
     <div>
       <div className="container">
-        {props.products?.map((product) => (
+        {props.products.map((product) => (
           <Card
-            isButtonVisible={false}
+            buttonDelete={true}
             onClick={() => {
-              props.addProduct(product);
+              props.removeProduct(product);
             }}
             name={product.name}
             price={product.price}
+            buttonText="Delete"
           ></Card>
         ))}
       </div>
@@ -24,9 +26,8 @@ const Chart = (props) => {
 
 const getStateProps = (state) => {
   return {
-    data: state.data,
     products: state.products,
   };
 };
 
-export default connect(getStateProps)(Chart);
+export default connect(getStateProps, { removeProduct })(Cart);

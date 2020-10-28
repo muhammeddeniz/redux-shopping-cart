@@ -2,7 +2,7 @@ import React from "react";
 import "./header.css";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { HomePage, ChartPage } from "../../pages";
+import { HomePage, CartPage } from "../../pages";
 
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import HomeIcon from "@material-ui/icons/Home";
@@ -14,7 +14,7 @@ const Header = (props) => {
     <Router>
       <header className="header">
         <Link to="/" className="header__title">
-          Shopping Chart
+          Shopping Cart
         </Link>
 
         <nav className="nav">
@@ -26,16 +26,18 @@ const Header = (props) => {
           </div>
 
           <div className="nav__router">
-            <Link to="/chart" className="navbar__link">
+            <Link to="/cart" className="navbar__link">
               {props.notification ? (
                 <div className="icon">
                   <ShoppingCartIcon />
                   <div className="iconNotf"></div>
                 </div>
               ) : (
-                <ShoppingCartIcon size={20} className="icon" />
+                <div className="icon">
+                  <ShoppingCartIcon size={20} className="icon" />
+                </div>
               )}
-              <span className="link__text">Chart</span>
+              <span className="link__text">Cart</span>
             </Link>
           </div>
         </nav>
@@ -46,8 +48,8 @@ const Header = (props) => {
           <HomePage />
         </Route>
 
-        <Route path="/chart">
-          <ChartPage />
+        <Route path="/cart">
+          <CartPage />
         </Route>
       </Switch>
     </Router>
