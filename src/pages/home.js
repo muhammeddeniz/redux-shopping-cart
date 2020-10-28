@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import { connect } from "react-redux";
-import { addProduct, removeProduct } from "../actions";
+import { addProduct, removeProduct, setNotification } from "../actions";
 import { Card } from "../components";
 
 import "../styles/home.css";
@@ -16,6 +16,7 @@ const App = (props) => {
           <Card
             onClick={() => {
               props.addProduct(product);
+              props.setNotification(true);
             }}
             name={product.name}
             price={product.price}
@@ -33,4 +34,8 @@ const GetStoreProps = (state) => {
   };
 };
 
-export default connect(GetStoreProps, { addProduct, removeProduct })(App);
+export default connect(GetStoreProps, {
+  addProduct,
+  removeProduct,
+  setNotification,
+})(App);

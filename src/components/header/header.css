@@ -26,6 +26,7 @@
 }
 
 .header .navbar__link {
+  display: flex;
   padding: 0 15px;
 
   font-size: 21px;
@@ -34,8 +35,55 @@
   font-family: fantasy;
 
   color: black;
+  padding-left: 5px;
 }
 
 .header .navbar__link:hover {
   color: gray;
+}
+
+.alert {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: black;
+
+  align-self: center;
+  background: red;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+.nav__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.icon {
+  position: relative;
+}
+
+.iconNotf {
+  position: absolute;
+  top: -4px;
+  left: 14px;
+
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: red;
+
+  border: 2px solid white;
+}
+
+.nav__router {
+  display: flex;
+  align-items: center;
+}
+
+.link__text {
+  margin-left: 10px;
 }

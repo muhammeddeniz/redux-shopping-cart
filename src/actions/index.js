@@ -11,3 +11,10 @@ export const removeProduct = (product) => {
     payload: product,
   };
 };
+
+export const setNotification = (notification) => {
+  return {
+    type: "SET_NOTIFICATION",
+    payload: notification,
+  };
+};
