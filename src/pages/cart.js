@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { connect } from "react-redux";
 import { Card } from "../components";
-import { removeProduct } from "../actions";
+import { removeProduct, setNotification } from "../actions";
 
 const Cart = (props) => {
+  useEffect(() => {
+    if (props.products.length === 0) {
+      props.setNotification(false);
+    }
+  });
+
   return (
     <div>
       <div className="container">
         {props.products.map((product) => (
           <Card
             buttonDelete={true}
-            onClick={() => {
-              props.removeProduct(product);
+            onClick={async () => {
+              await props.removeProduct(product);
             }}
             name={product.name}
             price={product.price}
@@ -27,7 +33,11 @@ const Cart = (props) => {
 const getStateProps = (state) => {
   return {
     products: state.products,
+    count: state.pruductCount,
   };
 };
 
-export default connect(getStateProps, { removeProduct })(Cart);
+export default connect(getStateProps, {
+  removeProduct,
+  setNotification,
+})(Cart);
